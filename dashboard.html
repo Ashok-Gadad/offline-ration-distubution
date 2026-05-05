@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ration Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <h2>🍚 Ration Tracker</h2>
+
+        <ul class="menu">
+            <li class="active">📊 Dashboard</li>
+            <li>👥 Customers</li>
+            <li>📦 Stock</li>
+            <li>📑 Reports</li>
+        </ul>
+
+        <button id="logoutBtn" class="delete-btn">Logout</button>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="dashboard-header">
+            <div>
+                <h1>Dashboard</h1>
+                <p>Offline Ration Distribution System</p>
+            </div>
+        </header>
+
+        <!-- CARDS -->
+        <section class="cards-section">
+            <div class="card"><p>Total</p><h2 id="totalCustomers">0</h2></div>
+            <div class="card"><p>Received</p><h2 id="receivedCount">0</h2></div>
+            <div class="card"><p>Pending</p><h2 id="pendingCount">0</h2></div>
+            <div class="card"><p>Offline</p><h2 id="offlineCount">0</h2></div>
+        </section>
+
+        <!-- FORM -->
+        <section class="entry-form-section">
+
+            <h2>Add Customer</h2>
+
+            <form id="customerForm">
+
+                <input type="text" id="customerName" placeholder="Customer Name" required>
+                <input type="text" id="rationNumber" placeholder="Ration Number" required>
+                <input type="text" id="phoneNumber" placeholder="Phone Number" required>
+
+                <!-- ✅ PRODUCT CHECKBOX -->
+                <div class="checkbox-group">
+                    <label><input type="checkbox" value="Rice" class="productCheckbox"> Rice</label>
+                    <label><input type="checkbox" value="Maize" class="productCheckbox"> Maize</label>
+                    <label><input type="checkbox" value="Oil" class="productCheckbox"> Oil</label>
+                    <label><input type="checkbox" value="Sugar" class="productCheckbox"> Sugar</label>
+                </div>
+
+                <input type="number" id="quantityInput" placeholder="Quantity" required>
+
+                <select id="statusSelect">
+                    <option value="Received">Received</option>
+                    <option value="Pending">Pending</option>
+                </select>
+
+                <button type="submit">Add Customer</button>
+
+            </form>
+
+        </section>
+
+        <!-- TABLE -->
+        <section class="table-section">
+
+            <div class="table-header">
+                <h2>Customer Records</h2>
+                <input type="text" id="searchInput" placeholder="Search...">
+            </div>
+
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Ration</th>
+                        <th>Phone</th>
+                        <th>Products</th>
+                        <th>Qty</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="customerTableBody"></tbody>
+            </table>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>

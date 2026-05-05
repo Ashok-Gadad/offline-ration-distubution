@@ -1,0 +1,215 @@
+/* ================= ROOT VARIABLES ================= */
+:root {
+    --primary: #4CAF50;
+    --secondary: #3498db;
+    --danger: #e74c3c;
+    --bg: #f4f6f9;
+    --card-bg: #ffffff;
+    --text: #333;
+    --radius: 14px;
+    --shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* ================= GLOBAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* ================= LAYOUT FIX ================= */
+.main-container {
+    display: flex;
+    min-height: 100vh;
+    flex-wrap: wrap;
+}
+
+/* LEFT PANEL */
+.left-panel {
+    width: 40%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    padding: 40px;
+}
+
+/* RIGHT PANEL */
+.right-panel {
+    width: 60%;
+    padding: 40px;
+}
+
+/* ================= FORM ================= */
+.form-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.form-box {
+    flex: 1;
+    min-width: 280px;
+    background: white;
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group input,
+.input-group select {
+    padding: 10px;
+    border-radius: var(--radius);
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+/* ================= BUTTONS ================= */
+.primary-btn {
+    background: var(--primary);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.primary-btn:hover {
+    background: #43a047;
+}
+
+.secondary-btn {
+    background: var(--secondary);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+/* ================= DASHBOARD FIX ================= */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR FIX */
+.sidebar {
+    width: 250px;
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+/* MAIN CONTENT FIX */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    overflow-x: auto;
+}
+
+/* ================= CARDS ================= */
+.cards-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+/* ================= TABLE FIX ================= */
+.table-section {
+    background: white;
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/* ================= CHECKBOX ================= */
+.checkbox-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* ================= TOAST ================= */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #2ecc71;
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    display: none;
+    z-index: 1000;
+}
+
+/* ================= RESPONSIVE FIX ================= */
+@media (max-width: 900px) {
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    .left-panel,
+    .right-panel {
+        width: 100%;
+    }
+
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cards-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .cards-section {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        min-width: 100%;
+    }
+}

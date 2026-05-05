@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ration System</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="main-container">
+
+<section class="left-panel">
+    <h1>🍚 Ration Tracker</h1>
+</section>
+
+<section class="right-panel">
+
+<div class="form-container">
+
+<form id="loginForm" class="form-box">
+<h2>Login</h2>
+<input type="text" id="loginUsername" placeholder="Username" required>
+<input type="password" id="loginPassword" placeholder="Password" required>
+<p id="forgotPassword">Forgot Password?</p>
+<button type="submit" class="primary-btn">Login</button>
+</form>
+
+<form id="signupForm" class="form-box">
+<h2>Sign Up</h2>
+<input type="text" id="signupName" placeholder="Name" required>
+<input type="text" id="signupUsername" placeholder="Username" required>
+<input type="password" id="signupPassword" placeholder="Password" required>
+
+<select id="roleSelect">
+<option value="admin">Admin</option>
+<option value="shopkeeper">Shopkeeper</option>
+</select>
+
+<button type="submit" class="secondary-btn">Create</button>
+</form>
+
+</div>
+
+</section>
+</main>
+
+<div id="toast" class="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
